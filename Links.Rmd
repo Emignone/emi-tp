@@ -1,0 +1,13 @@
+---
+title: "Authors"
+output: html_document
+---
+
+# [Mignone Maria Emilia](mailto:emilia.mignone@ing.austral.edu.ar)
+
+# [Tartara Moroni Sofia](mailto: Sofia.tartara@ing.austral.edu.ar)
+
+# [Molaro Guido](mailto: guido.molaro@ing.austral.edu.ar)
+
+# [Galarce Maria Justina](mailto: justina.galarce@ing.austral.edu.ar)
+

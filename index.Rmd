@@ -1,0 +1,34 @@
+---
+title: "BioInf"
+output: html_document
+---
+
+<style type="text/css">
+.title {
+  display: none;
+}
+
+#getting-started img {
+  margin-right: 10px;
+}
+
+</style>
+
+<div class="row" style="padding-top: 30px;">
+<div class="col-sm-6">
+
+# **Hands-On genes**
+
+En este trabajo exploramos y trabajamos las paginas: [NCBI](https://www.ncbi.nlm.nih.gov/gene/) , [genomes pathways](https://www.genome.jp/kegg/pathway.html), [Uniprot](https://www.uniprot.org/).
+
+<a href = "https://www.sib.swiss/what-is-bioinformatics">
+![](images/images.jpg)
+
+### [ - ¿Qué es BLAST?](https://blast.ncbi.nlm.nih.gov/)
+
+### [- ¿Qué es la NCBI?](http://scielo.sld.cu/scielo.php?script=sci_arttext&pid=S1024-94352009000400003)
+
+### [- ¿Qué es UNIPROT?](https://www.uniprot.org/help/about)
+
+
+

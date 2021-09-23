@@ -1,0 +1,44 @@
+---
+title: "step by step"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 1
+    #code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
+```
+
+# CÓMO INDENTIFICAR Y CARACTERIZAR UN GEN A PARTIR DE SU SECUENCIA DE ADN
+* Copiar la secuencia dada para introducirla en el programa BLAST
+*
+*
+*
+![](images/1.jpg)
+
+Notice that whatever you define as a top level header, automatically gets put into the table of contents bar on the left. 
+
+### Bifurcacion 1
+
+You can add more headers by adding more hashtags. These won't be put into the table of contents
+
+### Bifurcacion 2
+
+
+# Step 2
+![](images/images.jpg)
+
+# Step 3
+![](images/images.jpg)
+
+# Step 4
+![](images/images.jpg)
+
+
+# Step 5
+![](images/images.jpg)
