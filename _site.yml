@@ -1,0 +1,11 @@
+name: "BioInf"
+navbar:
+  title: "BioInf"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "step by step"
+      href: Journal.html
+    - text: "Authors"
+      href: Links.html
+output_dir: "docs"
