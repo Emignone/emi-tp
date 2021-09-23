@@ -1,0 +1,236 @@
+---
+title: "step by step"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 1
+    #code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
+```
+
+# CÓMO INDENTIFICAR Y CARACTERIZAR UN GEN A PARTIR DE SU SECUENCIA DE ADN
+* Copiar la secuencia dada para introducirla en el programa BLAST
+* Entrar en la opción que dice Nucleotide Blast 
+* Pegar la secuencia de ADN en donde indica “Enter Query Sequence”
+* Apretar el boton que dice BLAST y esperar unos minutos por el resultado (una lista)
+* Clickear sobre la primera secuencia de ADN que figura en la lista obtenida 
+* Entrar al link, que es un número azul, que corresponde a la secuencia clickeada en el paso anterior
+* Copiar el número de locus, insertarlo en el programa Uniprot y apretar “Search”
+* Clickear sobre la primera entrada que aparece e investigar 
+* Entrar al link del programa llamado KEGG Pathway
+* Seleccionar el organismo donde dice “Organism”
+* Donde dice “Enter keywords” ingresar el nombre de la enzima con el número EC que se saca de Uniprot 
+* De los mapas metabólicos que aparecen, seleccionar el más relevante de acuerdo a lo que se quiere conocer de este gen (entrar a la vía metabólica)
+Una vez encontrada la vía metabólica, que corresponde a la proteína, explorarla
+
+# Cómo encontrar secuencias de ADN de genes de interés
+
+* Ingresar a la plataforma NCBI y entrar al sitio llamado Gene
+* Tipear el nombre del gen en la parte superior y clickear en “search”
+* Seleccionar también una especie para acotar la búsqueda
+* De la lista de proteínas que devuelve, elegir una e iniciar la exploración
+* Entrar a los enlaces a la secuencia del ARNm y a la proteína
+* Entrar a Uniprot con el locus correspondiente a esta proteína 
+* Chequear si en la ubicación subcelular se encuentra la explicación de para qué sirve el péptido señal 
+* Repetir el ejercicio con la quitinasa de tomate 
+* Buscar que representan las estructuras de exones e intrones y como se procesan durante la maduración del ARNm
+
+# Pasos con Imagenes
+
+![](images/1.jpg)
+
+
+1. Este es el camino principal. A partir de una secuencia de nucleótidos, buscará otra similar
+2. En este caso, a partir de una secuencia de nucleótidos, la traduce para luego buscar una proteína similar
+#
+3. Este es el camino inverso al (2), donde a partir de una proteína se buscan posibles secuencias traducidas de nucleótidos que hayan creado esa proteína
+#
+4. Finalmente, se puede buscar proteínas similares.
+
+![](images/2.jpg)
+
+* En nuestro camino principal, nos piden insertar nuestra secuencia. Esta puede ser un número de acceso, un FASTA, etc. En caso de que queramos, podemos también realizar un BLAST de 2 o más secuencias para compararlas
+* Tenemos la opción también de poder buscar nuestra secuencia en diferentes bases de datos:
+  + Bases de datos estándar: Contiene dentro suyo varias opciones, como base de datos de nucleótidos, de RNA RefSeq, etc.
+  + ARNr/ITS: Sirve más que nada para encontrar secuencias de ARN ribosomal de procariontes
+  + Genomic + Transcript: Incluye ARNs curados por RefSeq y modelos de ARN predichos.
+  + BetaCoronavirus
+* También podemos centrar nuestra búsqueda en organismos específicos
+* Por último, tenemos 3 programas de blast:
+
+  + Megablast: Para secuencias altamente similares, es más rápido.
+  +Discontiguous megablast: Sirve para comparación entre especies distintas, ignora algunas bases
+  + BlastN: Más lento, pero utiliza todas las secuencias.
+
+
+![](images/3.jpg)
+
+1. En descripciones, podemos ver diferentes datos sobre las secuencias que encontramos, como por ejemplo:
+
+* Nombre científico
+* E Value: Es la chance de que la similitud ocurra por chance. Por ejemplo, una secuencia corta puede aparecer dentro de otra solamente por chance.
+* Scores: El máximo es la puntuación de la alineación entre la secuencia query y el segmento del de la base de datos. El total  es la suma de todas las alineaciones de la secuencia que alineen con la query
+
+2- El gráfico:
+![](images/3.1.jpg)
+3. “Alignment” nos da la alineación de las secuencias con nuestra query. También nos da el ID de la secuencia, que necesitaremos para seguir nuestro hands-on.
+4. “Taxonomy” nos da el Linaje, el organismo y la taxonomía de la secuencia.
+5. Como podemos observar, nuestra query encuentra varias secuencias que tienen un alto porcentaje de alineamiento. Estas secuencias también incluyen todas las opciones dichas previamente
+6. Finalmente, podemos filtrar los resultados por organismos, por porcentaje de identidad, valor E y “Query Coverage”.
+
+
+![](images/4.jpg)
+
+1. Toda la información principal sobre esta entrada se encuentra aquí.
+2. Tenemos la opción de analizar la secuencia de diferentes maneras como por ejemplo:
+* Un BLAST como veníamos haciendo
+* Construir cebadores para esta secuencia (útiles para PCR)
+* Encontrar subsecuencias
+
+![](images/5.jpg)
+
+1. “Gene” nos muestra toda la secuencia del gen.
+2. “Exón” nos muestra los exones de la secuencia. En este caso, es toda la secuencia
+3. “CDS” nos da la posible sub-secuencia codificante. Si seleccionamos esto, vemos que inicia en un ATG (START) y termina en un codón STOP (en este caso, TGA).
+4. Podemos ver información relacionada al gen, como:
+#
+* Proteína que codifica
+* Artículos de PubMed citados por la entrada
+*La taxonomía de la entrada
+* Genes relacionados
+
+![](images/6.jpg)
+1. En nuestro camino principal, introducimos nuestro LOCUS en el buscador.
+2. UniRef nos da conjuntos agrupados de secuencia, incluidas las isoformas, ocultando las secuencias redundantes.
+3. UniParc es una base de datos no redundante que contiene casi todas las secuencias de proteínas públicamente conocidas. 
+4. Proteomes reúne a los proteomas, que son conjuntos de proteínas que se creen que están expresados por un organismo.
+
+
+![](images/7.jpg)
+1. La entrada COPL14 es nuestra entrada principal, que está completa. Utilizaremos esta en nuestro hands-on.
+2. La entrada B6SWA0 es la misma proteína, pero no está completa.
+3. Si tuviéramos más entradas, podría ser mejor verlas organizadas de otra manera, como por su taxonomía o su ontología.
+
+![](images/8.jpg)
+
+1. La página nos da varias herramientas para analizar la proteína. Algunas de estas serán vistas en profundidad en la próxima captura
+2. La proteína también tiene una calificación de “annotation” y su estado (revisada-no revisada por SwissProt)
+
+
+![](images/9.jpg)
+1. Podemos ver el linaje taxonómico de nuestra proteína
+2. Como habíamos dicho antes, proteomas era el conjunto de proteínas expresadas por un organismo. Si clickeamos sobre UP00... , podemos ver que es el Zea Mays, nuestro organismo.
+
+![](images/10.jpg)
+
+1. Podemos centrarnos en diferentes partes específicas de la proteína.
+2. También podemos ir a la página específica donde se creó el modelo de la estructura.
+
+![](images/11.jpg)
+1. Utilizamos el buscador para buscar el organismo que necesitamos.
+KEGG también tiene varios mapas de rutas para, por ejemplo:
+* Metabolismos
+* Desarrollo de drogas
+
+![](images/12.jpg)
+1. El mapa de la ruta metabólica de la fenilalanina.
+2. Tenemos varios links para ver más genes relacionados a la Zea Mays.
+
+![](images/13.jpg)
+
+* Nuestra enzima junto a la fenilalanina.
+* Diferentes maneras de ver la ruta de la biosíntesis del fenilpropanoide.
+
+![](images/14.jpg)
+* Buscador del gen
+* Podemos filtrar los resultados por taxones o en base de datos específicas.
+
+![](images/15.jpg)
+
+
+* Nuestra secuencia de ADN junto a su ARNm (azul) y su proteína (rojo)
+* Tenemos la opción de ver la secuencia en FASTA, GenBank o en el gráfico de la imagen.
+
+![](images/16.jpg)
+* La página GenBank del ARNm. Tiene opciones similares a la de la secuencia de ADN del maíz.
+
+![](images/17.jpg)
+* La página de GenBank de la proteína. Tiene funciones similares a la de la secuencia de ADN (acordes a una proteína).
+
+***
+![](images/19.jpg)
+![](images/20.jpg)
+
+![](images/21.jpg)
+1. 
+![](images/22.jpg)
+2. 
+![](images/23.jpg)
+
+3. 
+![](images/24.jpg)
+
+![](images/25.jpg)
+* si bajas mas la pagina y dejas el mouse en la tabla verde, aparece la tabla mostrada.
+
+![](images/26.jpg)
+
+![](images/27.jpg)
+
+* en las 2 imagenes anteriores se repite el procedimeinto para las otras bandas
+* En cambio, si nos mantenemos sobre estas nos parecera:
+
+
+![](images/28.jpg)
+
+![](images/29.jpg)
+
+* Bajando por la pagina encontramos lo siguiente:
+![](images/30.jpg)
+
+* En 1 veremos: 
+![](images/31.jpg)
+
+* En 2 veremos: 
+![](images/32.jpg)
+![](images/33.jpg)
+* Entrando a 3:
+![](images/34.jpg)
+
+![](images/35.jpg)
+
+***
+
+# Preguntas
+
+a. ¿Qué significa el alineamiento? ¿Cómo se ve si clickeas en proteínas con menor porcentaje de identidad?
+	Cómo encontramos un alineamiento del 100%, significa que esta secuencia de nucleótidos está notada en la base de datos. 
+	Digamos que por ejemplo, quiero comparar mi secuencia con otras de las posibles secuencias similares que no sean la dicha anteriormente. Al analizarlas, veremos que comienzan en puntos diferentes, (por ejemplo, con el bambú gigante mi secuencia comienza en la pb 148 y la Subject en la 24). Además, notaremos más gaps y mismatches a medida que se reduce la similaridad
+b. ¿Qué proteína es?
+	Es la fenilalanina-amonio-liasa, una enzima encargada de catalizar una reacción que transforma la L-fenilalanina en amoníaco y ácido trans-cinámico. Recientemente ha comenzado a investigarse su uso en tratamientos para pacientes con Fenilcetonuria, una alteración del metabolismo que no permite sintetizar el amoníaco tirosina a partir de la fenilalanina en el hígado.
+c. ¿Por qué la CDS es más chica que la región abarcada por el exón?
+	Esto es por consecuencia de los codones de iniciación y terminación de la secuencia. 
+d. ¿Dónde están los codones de iniciación y de terminación?
+	El codón de iniciación se encuentra en el pb 122-124 y el codón de terminación se encuentra en el pb 2270-2272.
+e. ¿ Por qué la planta sensible a la enfermedad que originó este estudio era incapaz de sintetizar ácido cumárico? ¿Qué otras sustancias relacionadas con la resistencia a enfermedades podrían estar ausentes en este tipo de plantas?
+La planta sensible a la enfermedad no podía sintetizar ácido cumárico ya que la secuencia que codifica la fenilalanina-amonio-liasa, que participa en la ruta de biosíntesis de fenilpropanoide.
+f. La barra azul representa el ARNm y la roja, la proteína. ¿Por qué la barra roja es más corta que la azul?
+Porque no todo el ARNm mensajero codifica, sino solo la parte entre el codón START y el codón STOP.
+
+![](images/18.jpg)
+
+g. Qué es una péptido señal? ¿Por qué la proteína “pathogenesis-related protein 1 precursor” es precursora?
+Una péptido señal son los 1ros aminoácidos que aparecen en la proteína, y determinan el destino, la ruta de transporte y la eficiencia de secreción de la proteína. Esta proteína es precursora ya que la proteína subsecuente en sí es perjudicial, pero puede ser necesitada a corto plazo y/o en grandes cantidades.
+h. ¿Qué son los exones e intrones? ¿Cómo se procesan durante la maduración del ARNm?
+Los exones son secuencias codificantes del gen, mientras que los intrones son aquellas que no codifican. Durante la maduración, los intrones son eliminados mediante el splicing, y luego los exones son acoplados entre ellos.
+
+
+
+
+
